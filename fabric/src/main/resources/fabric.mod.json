@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "hexsanctum",
+  "version": "${version}",
+  "name": "HexSanctum",
+  "description": "HexSanctum addon for Hex Casting",
+  "authors": [
+    "TimeCipher"
+  ],
+  "contact": {
+    "homepage": "https://timecipher.github.io/hexsanctum",
+    "sources": "https://github.com/TimeCipher/hexsanctum"
+  },
+  "license": "MIT",
+  "icon": "assets/hexsanctum/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [{
+      "adapter": "kotlin",
+      "value": "io.github.timecipher.hexsanctum.fabric.FabricHexsanctum"
+    }],
+    "client": [{
+      "adapter": "kotlin",
+      "value": "io.github.timecipher.hexsanctum.fabric.FabricHexsanctumClient"
+    }],
+    "modmenu": [{
+      "adapter": "kotlin",
+      "value": "io.github.timecipher.hexsanctum.fabric.FabricHexsanctumModMenu"
+    }]
+  },
+  "mixins": [
+    "hexsanctum-common.mixins.json",
+    "hexsanctum-fabric.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "${versions.minecraft}",
+    "fabricloader": ">=${versions.fabric_loader}",
+    "fabric-api": ">=${versions.fabric_api}",
+    "fabric-language-kotlin": ">=${versions.kotlin_fabric}",
+    "architectury": ">=${versions.architectury}",
+    "hexcasting": ">=${versions.hexcasting_dependency}",
+    "cloth-config": ">=${versions.clothConfig}"
+  },
+  "suggests": {
+    "modmenu": ">=${versions.modMenu}"
+  }
+}
